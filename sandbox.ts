@@ -1,23 +1,23 @@
-let character = "jillo";
-let age = 30;
-let isBlackBelt = false;
+let names = ['luigi', 'mario', 'yoshi', true,7];
+
+names.push(7)
+names.push('some')
+names[0] = 9
 
 
-// character = 20
-character = "luigi"
+//objects
+let ninja = {
+    name: 'mario',
+    belt: 'black',
+    age: 30
+};
 
-// age = 'yoshi'
-age = 55;
-
-// isBlackBelt = "yes"
-isBlackBelt = true;
-
-const circ = (diameter: number) => (
-    diameter * Math.PI
-)
-
-console.log(circ(7.434));
-
-
-
+ninja.name = "Jillo";
+// ninja.skills = ["fighthing", "seeing"]
+// ninja = {
+//     name: "Jane",
+//     belt: "red",
+//     age: 43,
+//     skills: ["Skiing","bungee"]
+// }
 
