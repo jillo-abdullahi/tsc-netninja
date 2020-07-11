@@ -119,5 +119,19 @@ let modul = (a:number, b:number):number => {
 let result = modul(400,55);
 console.log(result)
 
+// declaring types first to avoid code repetition.
+
+type stringOrNum = number | string;
+type objectWithName = {name: string, uid: stringOrNum}
+// let findUser = (user: {name: string, uid: number | string})=> {
+//     return user
+// }
+let findUser = (user: objectWithName)=> {
+    return user
+}
+
+let userResult = findUser({name:"harry", uid: "82943894"})
+console.log(userResult)
+
 
 

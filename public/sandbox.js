@@ -91,3 +91,11 @@ var modul = function (a, b) {
 };
 var result = modul(400, 55);
 console.log(result);
+// let findUser = (user: {name: string, uid: number | string})=> {
+//     return user
+// }
+var findUser = function (user) {
+    return user;
+};
+var userResult = findUser({ name: "harry", uid: "82943894" });
+console.log(userResult);
