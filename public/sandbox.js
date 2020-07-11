@@ -1,3 +1,4 @@
+"use strict";
 var names = ['luigi', 'mario', 'yoshi', true, 7];
 names.push(7);
 names.push('some');
@@ -68,4 +69,4 @@ var witches;
 witches = { name: "jillo", age: 34, skills: ["some", "skill"] };
 console.log(witches);
 witches = { name: 23, age: "harry", skills: true };
-console.log(witches);
+console.log("witches are not bad", witches);

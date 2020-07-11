@@ -91,7 +91,7 @@ let witches: {name: any, age: any, skills: any};
 witches = {name: "jillo", age: 34, skills: ["some", "skill"] };
 console.log(witches)
 witches = {name: 23, age: "harry", skills: true };
-console.log(witches)
+console.log("witches are not bad", witches)
 
 
 
