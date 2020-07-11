@@ -70,3 +70,24 @@ witches = { name: "jillo", age: 34, skills: ["some", "skill"] };
 console.log(witches);
 witches = { name: 23, age: "harry", skills: true };
 console.log("witches are not bad", witches);
+// using functions
+// let greeting = () => {
+//     console.log("hell0, world");
+// }
+var greeting;
+greeting = function () {
+    console.log("hello, again");
+};
+greeting();
+var sum = function (a, b, c) {
+    if (c === void 0) { c = 8; }
+    console.log(a * b);
+    console.log(c);
+};
+sum(5, 10, "20");
+// function return types:
+var modul = function (a, b) {
+    return a % b;
+};
+var result = modul(400, 55);
+console.log(result);
