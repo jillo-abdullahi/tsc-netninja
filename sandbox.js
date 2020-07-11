@@ -48,3 +48,24 @@ ninjaTwo = {
     beltColor: "red"
 };
 console.log(ninjaTwo);
+// using any type; back to Javascript
+var wizards = 25;
+console.log(wizards);
+wizards = "hufflepuff";
+console.log(wizards);
+wizards = { name: "harry", age: 10, skills: ["Quidditch", "patronas"] };
+console.log(wizards);
+//using any type with arrays
+var mix = [];
+mix.push("harry");
+mix.push(23);
+mix.push(true);
+console.log("mix", mix);
+mix = ["harry", false, 23, null];
+console.log("new mix", mix);
+//using any type with objects
+var witches;
+witches = { name: "jillo", age: 34, skills: ["some", "skill"] };
+console.log(witches);
+witches = { name: 23, age: "harry", skills: true };
+console.log(witches);
