@@ -32,14 +32,18 @@ form.addEventListener('submit', (e: Event) => {
 
 // working with classes
 class Invoice {
-    client: string;
-    detail: string;
-    amount: number;
+    // readonly client: string;
+    // private detail: string;
+    // public amount: number;
 
-    constructor(client: string, detail: string, amount: number) {
-        this.client = client;
-        this.detail = detail;
-        this.amount = amount;
+    constructor(
+        readonly client: string,
+        private detail: string, 
+        public amount: number) {
+
+        // this.client = client;
+        // this.detail = detail;
+        // this.amount = amount;
     }
 
     format() {
@@ -61,9 +65,17 @@ invoices.push(invTwo);
 console.log("these are new invoices", invoices)
 
 //modify some class object attributes since everything is public at the moment
-invOne.client = "Harry Potter";
+// invOne.client = "Harry Potter";
 invTwo.amount = 599;
 
 console.log(invOne, invTwo)
+
+// accessing object attributes
+invoices.forEach(inv => {
+    console.log("Client",inv.client)
+    // console.log("Detail",inv.detail)
+    console.log("Amount", inv.amount)
+    console.log("format", inv.format());
+})
 
 

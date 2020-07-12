@@ -21,10 +21,16 @@ form.addEventListener('submit', function (e) {
 });
 // working with classes
 var Invoice = /** @class */ (function () {
+    // readonly client: string;
+    // private detail: string;
+    // public amount: number;
     function Invoice(client, detail, amount) {
         this.client = client;
         this.detail = detail;
         this.amount = amount;
+        // this.client = client;
+        // this.detail = detail;
+        // this.amount = amount;
     }
     Invoice.prototype.format = function () {
         return this.client + " owes $" + this.amount + " for " + this.detail;
@@ -40,6 +46,13 @@ invoices.push(invOne);
 invoices.push(invTwo);
 console.log("these are new invoices", invoices);
 //modify some class object attributes since everything is public at the moment
-invOne.client = "Harry Potter";
+// invOne.client = "Harry Potter";
 invTwo.amount = 599;
 console.log(invOne, invTwo);
+// accessing object attributes
+invoices.forEach(function (inv) {
+    console.log("Client", inv.client);
+    // console.log("Detail",inv.detail)
+    console.log("Amount", inv.amount);
+    console.log("format", inv.format());
+});
