@@ -29,3 +29,41 @@ form.addEventListener('submit', (e: Event) => {
         amount.valueAsNumber
     )
 })
+
+// working with classes
+class Invoice {
+    client: string;
+    detail: string;
+    amount: number;
+
+    constructor(client: string, detail: string, amount: number) {
+        this.client = client;
+        this.detail = detail;
+        this.amount = amount;
+    }
+
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.detail}`;
+    }
+}
+
+const invOne = new Invoice("Marion", "outdoor plumbing", 100);
+const invTwo = new Invoice("Luigi", "new racing cart", 799);
+
+console.log(invOne.format(), "=======", invTwo.format())
+
+// Using strict types with this class
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+
+console.log("these are new invoices", invoices)
+
+//modify some class object attributes since everything is public at the moment
+invOne.client = "Harry Potter";
+invTwo.amount = 599;
+
+console.log(invOne, invTwo)
+
+
