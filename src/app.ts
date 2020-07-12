@@ -1,3 +1,5 @@
+import { Invoice } from "./classes/invoice.js";
+
 // working with dom elements
 let anchor = document.querySelector('a');
 
@@ -29,27 +31,6 @@ form.addEventListener('submit', (e: Event) => {
         amount.valueAsNumber
     )
 })
-
-// working with classes
-class Invoice {
-    // readonly client: string;
-    // private detail: string;
-    // public amount: number;
-
-    constructor(
-        readonly client: string,
-        private detail: string, 
-        public amount: number) {
-
-        // this.client = client;
-        // this.detail = detail;
-        // this.amount = amount;
-    }
-
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.detail}`;
-    }
-}
 
 const invOne = new Invoice("Marion", "outdoor plumbing", 100);
 const invTwo = new Invoice("Luigi", "new racing cart", 799);

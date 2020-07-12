@@ -1,10 +1,10 @@
 "use strict";
-var names = ['luigi', 'mario', 'yoshi', true, 7];
+let names = ['luigi', 'mario', 'yoshi', true, 7];
 names.push(7);
 names.push('some');
 names[0] = 9;
 //objects
-var ninja = {
+let ninja = {
     name: 'mario',
     belt: 'black',
     age: 30
@@ -18,9 +18,9 @@ ninja.name = "Jillo";
 //     skills: ["Skiing","bungee"]
 // }
 // explicit types
-var character;
-var age;
-var isLoggedIn;
+let character;
+let age;
+let isLoggedIn;
 age = 30;
 isLoggedIn = false;
 // let ninjas: string[];
@@ -28,21 +28,21 @@ isLoggedIn = false;
 // console.log(ninjas)
 // ninjas.push("JILL");
 //union types
-var mixed = [];
+let mixed = [];
 mixed.push("yellow");
 mixed.push(20);
 mixed.push(true);
 console.log(mixed);
-var uid;
+let uid;
 uid = 20;
 uid = "yellow";
 //objects
-var ninjaOne = { name: "jill" };
+let ninjaOne = { name: "jill" };
 ninjaOne = {
     name: "Jillo",
     age: 23
 };
-var ninjaTwo;
+let ninjaTwo;
 ninjaTwo = {
     name: "Jillo",
     age: 23,
@@ -50,14 +50,14 @@ ninjaTwo = {
 };
 console.log(ninjaTwo);
 // using any type; back to Javascript
-var wizards = 25;
+let wizards = 25;
 console.log(wizards);
 wizards = "hufflepuff";
 console.log(wizards);
 wizards = { name: "harry", age: 10, skills: ["Quidditch", "patronas"] };
 console.log(wizards);
 //using any type with arrays
-var mix = [];
+let mix = [];
 mix.push("harry");
 mix.push(23);
 mix.push(true);
@@ -65,7 +65,7 @@ console.log("mix", mix);
 mix = ["harry", false, 23, null];
 console.log("new mix", mix);
 //using any type with objects
-var witches;
+let witches;
 witches = { name: "jillo", age: 34, skills: ["some", "skill"] };
 console.log(witches);
 witches = { name: 23, age: "harry", skills: true };
@@ -74,29 +74,28 @@ console.log("witches are not bad", witches);
 // let greeting = () => {
 //     console.log("hell0, world");
 // }
-var greeting;
-greeting = function () {
+let greeting;
+greeting = () => {
     console.log("hello, again");
 };
 greeting();
-var sum = function (a, b, c) {
-    if (c === void 0) { c = 8; }
+let sum = (a, b, c = 8) => {
     console.log(a * b);
     console.log(c);
 };
 sum(5, 10, "20");
 // function return types:
-var modul = function (a, b) {
+let modul = (a, b) => {
     return a % b;
 };
-var result = modul(400, 55);
+let result = modul(400, 55);
 console.log(result);
 // let findUser = (user: {name: string, uid: number | string})=> {
 //     return user
 // }
-var findUser = function (user) {
+let findUser = (user) => {
     return user;
 };
-var userResult = findUser({ name: "harry", uid: "82943894" });
+let userResult = findUser({ name: "harry", uid: "82943894" });
 console.log(userResult);
 // function signatures. Found this a bit redundant at the moment.

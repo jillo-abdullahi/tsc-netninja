@@ -1,47 +1,29 @@
-"use strict";
+import { Invoice } from "./classes/invoice.js";
 // working with dom elements
-var anchor = document.querySelector('a');
+let anchor = document.querySelector('a');
 if (anchor) {
     console.log(anchor.href);
 }
 // looks like the two form definitions below do the same thing.
 // const form = document.querySelector('form');
 // console.log(form?.children)
-var form = document.querySelector(".new-item-form");
+const form = document.querySelector(".new-item-form");
 // console.log(form?.children)
 // grab all input fields
-var type = document.querySelector("#type");
-var toFrom = document.querySelector("#tofrom");
-var input = document.querySelector("#details");
-var amount = document.querySelector("#amount");
+const type = document.querySelector("#type");
+const toFrom = document.querySelector("#tofrom");
+const input = document.querySelector("#details");
+const amount = document.querySelector("#amount");
 //add event listeners
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, toFrom.value, input.value, amount.valueAsNumber);
 });
-// working with classes
-var Invoice = /** @class */ (function () {
-    // readonly client: string;
-    // private detail: string;
-    // public amount: number;
-    function Invoice(client, detail, amount) {
-        this.client = client;
-        this.detail = detail;
-        this.amount = amount;
-        // this.client = client;
-        // this.detail = detail;
-        // this.amount = amount;
-    }
-    Invoice.prototype.format = function () {
-        return this.client + " owes $" + this.amount + " for " + this.detail;
-    };
-    return Invoice;
-}());
-var invOne = new Invoice("Marion", "outdoor plumbing", 100);
-var invTwo = new Invoice("Luigi", "new racing cart", 799);
+const invOne = new Invoice("Marion", "outdoor plumbing", 100);
+const invTwo = new Invoice("Luigi", "new racing cart", 799);
 console.log(invOne.format(), "=======", invTwo.format());
 // Using strict types with this class
-var invoices = [];
+let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 console.log("these are new invoices", invoices);
@@ -50,7 +32,7 @@ console.log("these are new invoices", invoices);
 invTwo.amount = 599;
 console.log(invOne, invTwo);
 // accessing object attributes
-invoices.forEach(function (inv) {
+invoices.forEach(inv => {
     console.log("Client", inv.client);
     // console.log("Detail",inv.detail)
     console.log("Amount", inv.amount);
