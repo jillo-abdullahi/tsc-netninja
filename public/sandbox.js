@@ -99,3 +99,4 @@ var findUser = function (user) {
 };
 var userResult = findUser({ name: "harry", uid: "82943894" });
 console.log(userResult);
+// function signatures. Found this a bit redundant at the moment.
