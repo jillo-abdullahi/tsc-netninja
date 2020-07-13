@@ -59,4 +59,45 @@ invoices.forEach(inv => {
     console.log("format", inv.format());
 })
 
+// interfaces
+
+//Defining an interface.
+interface IsPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(b: number): number;
+}
+
+const me: IsPerson = {
+    name: "Shaun",
+    age: 39,
+    speak(text: string): void {
+        console.log(text)
+    },
+    spend(num: number): number{
+        return num
+    }
+};
+// me.name = "Shaun";
+// me.age = 29;
+// me.speak = (text: string) => {
+//     console.log(text)
+// }
+// me.spend = (num: number) => {
+//     return num;
+// }
+
+let someone: IsPerson;
+const greetPerson = (person: IsPerson) => {
+    console.log("Hello", person.name);
+}
+
+greetPerson(me)
+
+console.log("this is me", me);
+
+
+
+
 

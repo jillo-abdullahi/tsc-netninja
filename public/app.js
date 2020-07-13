@@ -38,3 +38,27 @@ invoices.forEach(inv => {
     console.log("Amount", inv.amount);
     console.log("format", inv.format());
 });
+const me = {
+    name: "Shaun",
+    age: 39,
+    speak(text) {
+        console.log(text);
+    },
+    spend(num) {
+        return num;
+    }
+};
+// me.name = "Shaun";
+// me.age = 29;
+// me.speak = (text: string) => {
+//     console.log(text)
+// }
+// me.spend = (num: number) => {
+//     return num;
+// }
+let someone;
+const greetPerson = (person) => {
+    console.log("Hello", person.name);
+};
+greetPerson(me);
+console.log("this is me", me);
