@@ -1,4 +1,5 @@
 import { Invoice } from "./classes/invoice.js";
+import { Payment } from "./classes/Payment.js";
 // working with dom elements
 let anchor = document.querySelector('a');
 if (anchor) {
@@ -7,18 +8,6 @@ if (anchor) {
 // looks like the two form definitions below do the same thing.
 // const form = document.querySelector('form');
 // console.log(form?.children)
-const form = document.querySelector(".new-item-form");
-// console.log(form?.children)
-// grab all input fields
-const type = document.querySelector("#type");
-const toFrom = document.querySelector("#tofrom");
-const input = document.querySelector("#details");
-const amount = document.querySelector("#amount");
-//add event listeners
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log(type.value, toFrom.value, input.value, amount.valueAsNumber);
-});
 const invOne = new Invoice("Marion", "outdoor plumbing", 100);
 const invTwo = new Invoice("Luigi", "new racing cart", 799);
 console.log(invOne.format(), "=======", invTwo.format());
@@ -56,9 +45,38 @@ const me = {
 // me.spend = (num: number) => {
 //     return num;
 // }
+console.log("this is me", me);
 let someone;
 const greetPerson = (person) => {
     console.log("Hello", person.name);
 };
 greetPerson(me);
-console.log("this is me", me);
+// interfaces with classes continued.
+let docOne;
+let docTwo;
+docOne = new Invoice("Yoshi", "web work", 599);
+docTwo = new Payment("Mario", "plumbing work", 600);
+// array of interfaces
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
+const form = document.querySelector(".new-item-form");
+// console.log(form?.children)
+// grab all input fields
+const type = document.querySelector("#type");
+const toFrom = document.querySelector("#tofrom");
+const details = document.querySelector("#details");
+const amount = document.querySelector("#amount");
+//add event listeners
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
+});

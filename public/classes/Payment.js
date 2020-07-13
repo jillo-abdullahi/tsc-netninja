@@ -1,9 +1,9 @@
-export class Invoice {
+export class Payment {
     // readonly client: string;
     // private detail: string;
     // public amount: number;
-    constructor(client, detail, amount) {
-        this.client = client;
+    constructor(recepient, detail, amount) {
+        this.recepient = recepient;
         this.detail = detail;
         this.amount = amount;
         // this.client = client;
@@ -11,6 +11,6 @@ export class Invoice {
         // this.amount = amount;
     }
     format() {
-        return `${this.client} owes $${this.amount} for ${this.detail}`;
+        return `${this.recepient} is owed $${this.amount} for ${this.detail}`;
     }
 }
