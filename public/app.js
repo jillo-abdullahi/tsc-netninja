@@ -91,14 +91,26 @@ const addUID = (obj) => {
 };
 let addOne = addUID({ name: "Yoshi", age: 40 });
 console.log(addOne.age);
+// let addTwo = addUID("name")
+//ENUMS
+var ResourceTypes;
+(function (ResourceTypes) {
+    ResourceTypes[ResourceTypes["BOOK"] = 0] = "BOOK";
+    ResourceTypes[ResourceTypes["AUTHOR"] = 1] = "AUTHOR";
+    ResourceTypes[ResourceTypes["FILM"] = 2] = "FILM";
+    ResourceTypes[ResourceTypes["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceTypes[ResourceTypes["PERSON"] = 4] = "PERSON";
+})(ResourceTypes || (ResourceTypes = {}));
 const docThree = {
     uid: 1,
     resourceName: "person",
+    resourceType: ResourceTypes.AUTHOR,
     data: { name: "steve" }
 };
 const docFour = {
     uid: 2,
     resourceName: "Someone",
+    resourceType: ResourceTypes.DIRECTOR,
     data: ["bread", "toiletroll"]
 };
 console.log(docThree, docFour);

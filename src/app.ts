@@ -124,36 +124,45 @@ form.addEventListener('submit', (e: Event) => {
 });
 
 //GENERICS
-const addUID = <T extends {name: string}>(obj: T) => {
-    let uid =  Math.floor(Math.random()*100);
-    return {...obj, uid}
+const addUID = <T extends { name: string }>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return { ...obj, uid }
 }
 
-let addOne = addUID({name: "Yoshi",age: 40});
+let addOne = addUID({ name: "Yoshi", age: 40 });
 console.log(addOne.age);
 // let addTwo = addUID("name")
+
+//ENUMS
+enum ResourceTypes { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
 
 //GENERICS with interfaces
 interface Resource<T> {
     uid: number;
     resourceName: string;
+    resourceType: ResourceTypes;
     data: T;
 }
 
 const docThree: Resource<object> = {
     uid: 1,
     resourceName: "person",
-    data: {name: "steve"}
+    resourceType: ResourceTypes.AUTHOR,
+    data: { name: "steve" }
 }
 
 const docFour: Resource<string[]> = {
     uid: 2,
     resourceName: "Someone",
-    data: ["bread","toiletroll"]
+    resourceType: ResourceTypes.DIRECTOR,
+    data: ["bread", "toiletroll"]
 
 }
 
 console.log(docThree, docFour)
+
+
+
 
 
 
