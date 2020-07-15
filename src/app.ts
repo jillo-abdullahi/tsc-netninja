@@ -1,4 +1,4 @@
-import { Invoice } from "./classes/invoice.js";
+import { Invoice } from "./classes/Invoice.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./interfaces/HasFormatter.js"
 import { ListTemplate } from "./classes/ListTemplate.js";
@@ -122,6 +122,39 @@ form.addEventListener('submit', (e: Event) => {
 
     list.render(doc, type.value, 'start')
 });
+
+//GENERICS
+const addUID = <T extends {name: string}>(obj: T) => {
+    let uid =  Math.floor(Math.random()*100);
+    return {...obj, uid}
+}
+
+let addOne = addUID({name: "Yoshi",age: 40});
+console.log(addOne.age);
+// let addTwo = addUID("name")
+
+//GENERICS with interfaces
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+
+const docThree: Resource<object> = {
+    uid: 1,
+    resourceName: "person",
+    data: {name: "steve"}
+}
+
+const docFour: Resource<string[]> = {
+    uid: 2,
+    resourceName: "Someone",
+    data: ["bread","toiletroll"]
+
+}
+
+console.log(docThree, docFour)
+
 
 
 
