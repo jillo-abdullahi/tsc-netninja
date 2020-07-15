@@ -113,11 +113,14 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
+    let values: [string, string, number]
+    values = [toFrom.value, details.value, amount.valueAsNumber]
+
     let doc: HasFormatter;
     if (type.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber)
+        doc = new Invoice(...values)
     } else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber)
+        doc = new Payment(...values)
     }
 
     list.render(doc, type.value, 'start')
@@ -160,6 +163,22 @@ const docFour: Resource<string[]> = {
 }
 
 console.log(docThree, docFour)
+
+// TUPLES
+
+//arrays are flexible
+let arr = ['ryu',333, true];
+arr[0] = false;
+arr[1] = "Yoshi";
+arr = [30, false, "Yoshi"]
+
+// in a tuple, types are fixed.
+let tup:  [string, number, boolean] = ['ryu',333, true];
+tup[0] = "false"
+
+let student: [string, number];
+student = ["Chun-li", 234234]
+
 
 
 

@@ -75,12 +75,14 @@ const ul = document.querySelector('ul');
 const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let values;
+    values = [toFrom.value, details.value, amount.valueAsNumber];
     let doc;
     if (type.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'start');
 });
@@ -114,3 +116,14 @@ const docFour = {
     data: ["bread", "toiletroll"]
 };
 console.log(docThree, docFour);
+// TUPLES
+//arrays are flexible
+let arr = ['ryu', 333, true];
+arr[0] = false;
+arr[1] = "Yoshi";
+arr = [30, false, "Yoshi"];
+// in a tuple, types are fixed.
+let tup = ['ryu', 333, true];
+tup[0] = "false";
+let student;
+student = ["Chun-li", 234234];
